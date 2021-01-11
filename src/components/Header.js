@@ -22,26 +22,23 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
-              <Link to='/cart'>
               <Nav.Link href='/cart'>
                 <i className='fas fa-shopping-cart'></i> Cart
               </Nav.Link>
-              </Link>
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id='username'>
-                  <LinkContainer to='/profile'>
+                  <Link to='/profile'>
                     <NavDropdown.Item>Profile</NavDropdown.Item>
-                  </LinkContainer>
+                  </Link>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <LinkContainer to='/login'>
-                  <Nav.Link>
+                  <Nav.Link href='/login'>
                     <i className='fas fa-user'></i> Sign In
                   </Nav.Link>
-                </LinkContainer>
+                
               )}
             </Nav>
           </Navbar.Collapse>

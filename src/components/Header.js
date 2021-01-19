@@ -12,6 +12,7 @@ const Header = () => {
 
   const logoutHandler = () => {
     dispatch(logout())
+    console.log('LOGOUT')
   }
 
   return (
@@ -34,9 +35,11 @@ const Header = () => {
                   <LinkContainer to='/profile'>
                     <NavDropdown.Item>Profile</NavDropdown.Item>
                   </LinkContainer>
+                  <LinkContainer to='/'>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
                   </NavDropdown.Item>
+                  </LinkContainer>
                 </NavDropdown>
               ) : (
                 <LinkContainer to='/login'>
